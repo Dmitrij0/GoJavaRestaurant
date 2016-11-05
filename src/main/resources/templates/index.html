@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Automation System Developed by Dmitrij Lenchuk GoIT GoJavaOnline#3</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="filter_criteria">filer by name</label>
+            </div>
+            <div class="col-md-6">
+                <input type="text" id="filter_criteria"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="box col-md-10">
+        <table class="table table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>OWNER</th>
+                <th>ACTIONS</th>
+            </tr>
+            <tr th:each="e : ${em}">
+                <td th:text="${e.id}">001</td>
+                <td class="name" th:text="${e.name}">Name</td>
+                <td th:text="${e.owner}">City</td>
+                <td>
+                    <button>Edit</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
